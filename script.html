@@ -25,7 +25,10 @@
             const secondsSpan = document.getElementById('seconds');
             if (!secondsSpan) {
                 const clockDiv = document.getElementById('clock');
-                clockDiv.innerHTML = `<span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>`;
+                clockDiv.innerHTML = 
+                `<span id="hours"></span>:
+                <span id="minutes"></span>:
+                <span id="seconds"></span>`;
             }
             updateClock();
             setInterval(updateClock, 1000);
@@ -229,7 +232,10 @@
                     <tr>
                         <td colspan="9">
                             Данные таблицы акутальны на:
-                            <div id="clock"><span id="hours"></span>:<span id="minutes"></span></div>
+                            <div id="clock">
+                                <span id="hours"></span>:
+                                <span id="minutes"></span>
+                            </div>
                         </td>
                     </tr>
                 </tfoot>
@@ -239,34 +245,45 @@
                 <fieldset>
                     <legend>Редактирование содержимого таблицы</legend>
                     <label for="name">Название:</label>
-                    <input type="text" id="name" required placeholder="Суперкомпьютер">
+                    <input type="text" id="name" 
+                    required placeholder="Суперкомпьютер">
 
                     <label for="location">Место установки:</label>
-                    <input type="text" id="location" required placeholder="Москва">
+                    <input type="text" id="location" 
+                    required placeholder="Москва">
 
                     <label for="nodes">Узлов:</label>
-                    <input type="number" id="nodes" required min="0" max="10000" value="0">
+                    <input type="number" id="nodes" 
+                    required min="0" max="10000" value="0">
 
                     <label for="processors">Процессоров:</label>
-                    <input type="number" id="processors" required min="0" max="100000" value="0">
+                    <input type="number" id="processors" 
+                    required min="0" max="100000" value="0">
 
                     <label for="accelerators">Ускорителей:</label>
-                    <input type="number" id="accelerators" required min="0" max="100000" value="0">
+                    <input type="number" id="accelerators" 
+                    required min="0" max="100000" value="0">
 
                     <label for="rmax">Rmax (Тфлоп/с):</label>
-                    <input type="number" id="rmax" required min="0" max="1000000" value="0">
+                    <input type="number" id="rmax" 
+                    required min="0" max="1000000" value="0">
 
                     <label for="rpeak">Rpeak (Тфлоп/с):</label>
-                    <input type="number" id="rpeak" required min="0" max="1000000" value="0">
+                    <input type="number" id="rpeak" 
+                    required min="0" max="1000000" value="0">
 
                     <label for="developer">Разработчик:</label>
-                    <input type="text" id="developer" required placeholder="Разработчик суперкомпьютера">
+                    <input type="text" id="developer" 
+                    required placeholder="Разработчик суперкомпьютера">
 
                     <label for="application">Область применения:</label>
-                    <input type="text" id="application" required placeholder="Область применения суперкомпьютера">
+                    <input type="text" id="application" 
+                    required placeholder="Область применения суперкомпьютера">
 
                     <button type="submit">Добавить строку</button>
-                    <button type="button" id="removeRowButton">Удалить добавленную строку</button>
+                    <button type="button" id="removeRowButton">
+                        Удалить добавленную строку
+                    </button>
                 </fieldset>
             </form>
 
@@ -274,23 +291,36 @@
                 <fieldset>
                     <legend>Редактирование отображение таблицы</legend>
                     <label for="width">Ширина таблицы:</label>
-                    <input type="number" id="width" value="1200" required min="100" max="10000">
+                    <input type="number" id="width" value="1200" 
+                    required min="100" max="10000">
 
                     <label for="height">Высота таблицы:</label>
-                    <input type="number" id="height" value="1000" required min="100" max="10000">
+                    <input type="number" id="height" value="1000" 
+                    required min="100" max="10000">
 
-                    <label for="captionColor" style="width: 200px;">Цвет описания таблицы:</label>
-                    <input style="width: 100px" type="color" id="captionColor" required value="#f2f2f2">
+                    <label for="captionColor" style="width: 200px;">
+                        Цвет описания таблицы:
+                    </label>
+                    <input style="width: 100px" type="color" id="captionColor" 
+                    required value="#f2f2f2">
 
-                    <label for="headerColor" style="width: 200px;">Цвет шапки таблицы:</label>
-                    <input style="width: 100px" type="color" id="headerColor" required value="#f2f2f2">
+                    <label for="headerColor" style="width: 200px;">
+                        Цвет шапки таблицы:
+                    </label>
+                    <input style="width: 100px" type="color" id="headerColor" 
+                    required value="#f2f2f2">
 
-                    <label for="cellColor" style="width: 200px;">Цвет ячеек таблицы:</label>
-                    <input style="width: 100px" type="color" id="cellColor" required value="#e2e9d2">
+                    <label for="cellColor" style="width: 200px;">
+                        Цвет ячеек таблицы:
+                    </label>
+                    <input style="width: 100px" type="color" id="cellColor" 
+                    required value="#e2e9d2">
                     
                     <br>
                     <button type="submit">Принять параметры</button>
-                    <button type="button" id="showSecondsButton">Показать полное время акуальности таблицы</button>
+                    <button type="button" id="showSecondsButton">
+                        Показать полное время акуальности таблицы
+                    </button>
                 </fieldset>
             </form>
         </main>
@@ -298,18 +328,21 @@
 
     <div id="clear"></div>
     <footer>
-        <section id="contact-info">
+        <section class="contact-info">
             <p>Связь с разработчиком:</p>
             <address>
-                <a href="mailto:artemsobakin2001@mail.ru">Электронная почта</a><br>
+                <a href="mailto:test@mail.ru">Электронная почта</a><br>
                 <a href="tel:+79999999999">Телефон</a><br>
-                <button onclick="alert ('Собакин Артем Вадимович \nГруппа Z1431')">Разработчик</button>
+                <button onclick="alert ('Собакин Артем Вадимович \nГруппа Z1431')">
+                    Разработчик
+                </button>
             </address>
         </section>
-        <section id="copyright">
+        <section class="copyright">
             <p>© 2025, Параллельные вычисления. Все права защищены.</p>
         </section>
     </footer>
+
 
 </body>
 </html>

@@ -7,8 +7,9 @@ function insertCell(row, id) {
 function handleSubmitRow(event) {
     event.preventDefault();
 
-    var table = document.getElementById('supercomputersTable').getElementsByTagName('tbody')[0]; 
-    var newRow = table.insertRow(); 
+    var table = document.getElementById('supercomputersTable');
+    var body = table.getElementsByTagName('tbody')[0]; 
+    var newRow = body.insertRow(); 
 
     insertCell(newRow, "name");
     insertCell(newRow, "location");
@@ -24,10 +25,11 @@ function handleSubmitRow(event) {
     document.getElementById('addRowForm').reset();
 }
 
-function removeLastInsertedRow() {
+function handleRemoveLastInsertedRow() {
     var rowToRemove = userInsertedRows.pop();
-    var table = document.getElementById('supercomputersTable').getElementsByTagName('tbody')[0];
-    table.removeChild(rowToRemove)
+    var table = document.getElementById('supercomputersTable');
+    var body = table.getElementsByTagName('tbody')[0];
+    body.removeChild(rowToRemove)
 }
 
 
@@ -39,24 +41,34 @@ function handleChangeTable(event) {
     table.style.maxWidth = document.getElementById("width").value + "px";
     table.style.maxHeight = document.getElementById("height").value + "px";
 
-    table.getElementsByTagName('caption')[0].style.backgroundColor = document.getElementById("captionColor").value; 
-    table.getElementsByTagName('thead')[0].style.backgroundColor = document.getElementById("headerColor").value; 
+    var caption = table.getElementsByTagName('caption')[0];
+    var caption_color = document.getElementById("captionColor").value;
+    caption.style.backgroundColor = caption_color;
 
-    var thElements = table.getElementsByTagName('thead')[0].getElementsByTagName('th'); 
+    var thead =  table.getElementsByTagName('thead')[0];
+    var thead_color =  document.getElementById("headerColor").value;
+    thead.style.backgroundColor = thead_color; 
+
+    var thElements = thead.getElementsByTagName('th'); 
     for (var i = 0; i < thElements.length; i++) { 
-        thElements[i].style.backgroundColor = document.getElementById("headerColor").value; 
+        thElements[i].style.backgroundColor = thead_color; 
     } 
     
-    var tdElements = table.getElementsByTagName('tbody')[0].getElementsByTagName('td'); 
+    var body = table.getElementsByTagName('tbody')[0];
+    var tdElements = body.getElementsByTagName('td'); 
+    var td_color = document.getElementById("cellColor").value;
     for (var j = 0; j < tdElements.length; j++) { 
-        tdElements[j].style.backgroundColor = document.getElementById("cellColor").value;
+        tdElements[j].style.backgroundColor = td_color;
     }
 }
 
 window.addEventListener('load', () => {
     updateClock();
-    document.getElementById('removeRowButton').addEventListener('click', removeLastInsertedRow);
-    document.getElementById('showSecondsButton').addEventListener('click', showSeconds);
+    var remove = document.getElementById('removeRowButton');
+    remove.addEventListener('click', handleRemoveLastInsertedRow);
+    
+    var show = document.getElementById('showSecondsButton');
+    show.addEventListener('click', showSeconds);
 });
 
 window.addEventListener('beforeunload', (event) => {
