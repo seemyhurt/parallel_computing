@@ -8,15 +8,35 @@ $project_developer = $_POST['project_developer'];
 $scope = $_POST['scope'];
 $date_begin = $_POST['date_begin'];
 
-$sql = "INSERT INTO Project (code_name, description, project_developer, scope, date_begin, computer_id) 
-        VALUES ('$code_name', '$description', '$project_developer', '$scope', '$date_begin', '$supercomputer')";
+$sql = "INSERT INTO Project (
+    code_name, description, project_developer, 
+    scope, date_begin, computer_id
+) 
+VALUES (
+    '$code_name', '$description', '$project_developer', 
+    '$scope', '$date_begin', '$supercomputer'
+)";
 
 if (mysqli_query($link, $sql)) {
-    printf("Успешно добавлен проект %s по %s разработчика %s в области %s, который стартует %s\n", 
-    $code_name, $description, $project_developer, $scope, $date_begin); 
-}
-else {
-    printf("Ошибка выполнения запроса. Код ошибки: %s\n", mysqli_error());
+    printf(
+        "<div style='color: green; font-weight: bold; font-size: 1.2em;'>
+            🎉 Проект <em>%s</em> успешно добавлен!
+        </div>
+        <ul>
+            <li>Описание: <em>%s ПФлоп/с</em></li>
+            <li>Разработчик: <em>%s</em></li>
+            <li>Область применения: <em>%s</em></li>
+            <li>Дата начала: <em>%s</em></li>
+        </ul>",
+        $code_name, $description, $project_developer, 
+        $scope, $date_begin
+    );
+} else {
+    printf(
+        "<div style='color: red; font-weight: bold;'>
+            ❌ Ошибка добавления проекта. Код ошибки: %s
+        </div>", mysqli_error($link)
+    );
 }
 
 mysqli_close($link);

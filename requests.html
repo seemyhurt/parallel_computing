@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <title>Параллельные вычисления. Использованные источники</title>
+    <title>Параллельные вычисления. Проекты для суперкомпьютеров</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="Список источников по теме Параллельные вычисления">
-    <meta name="keywords" content="Источники, Параллельные вычисления, Книги">
+    <meta name="description" 
+    content="Описание проектов, в которых был использован суперкомпьютер">
+    <meta name="keywords" content="Проекты, Суперкомпьютеры">
     <link rel="stylesheet" type="text/css" href="style/page_style.css">
     <script type="text/javascript" src="scripts/requests.js"> </script>
 
@@ -57,14 +58,14 @@
 
         label {
             display: inline-block;
-            width: 150px;
+            width: 170px;
             text-align: right;
             margin-right: 10px;
             font-weight: bold;
         }
 
         form input {
-            width: calc(100% - 200px);
+            width: calc(100% - 220px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -82,7 +83,7 @@
         }
 
         form select {
-            width: calc(100% - 200px);
+            width: calc(100% - 220px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -143,39 +144,51 @@
                 <fieldset>
                     <legend>Добавить суперкомпьютер</legend>
                     <label for="name">Название:</label>
-                    <input type="text" id="name" name="name" required placeholder="Суперкомпьютер">
+                    <input type="text" id="name" name="name" 
+                    required placeholder="Суперкомпьютер">
 
                     <label for="location">Место установки:</label>
-                    <input type="text" id="location" name="location" required placeholder="Москва">
+                    <input type="text" id="location" name="location" 
+                    required placeholder="Москва">
 
-                    <label for="performance">Производительность (ПФлоп/с):</label>
-                    <input type="number" id="performance" name="performance" required min="0" max="1000000" value="0">
+                    <label for="performance">Производительность:</label>
+                    <input type="number" id="performance" name="performance" 
+                    required min="0" max="1000000" value="0">
 
                     <label for="developer">Разработчик:</label>
-                    <input type="text" id="developer" name="developer" required placeholder="Разработчик суперкомпьютера">
+                    <input type="text" id="developer" name="developer" 
+                    required placeholder="Разработчик суперкомпьютера">
 
-                    <input class="submit" type="submit" value="Добавить суперкомпьютер">
+                    <input class="submit" type="submit" 
+                    value="Добавить суперкомпьютер">
                 </fieldset>
             </form>
 
             <form action="requests/insert_project.php" method="post">
                 <fieldset>
                     <legend>Добавить проект для суперкомпьютера</legend>
-                    <label for="supercomputer_select">Суперкомпьютер для проекта:</label>
-                    <select id="supercomputer_select" name="supercomputer_select" required>
+                    <label for="supercomputer_select">
+                        Суперкомпьютер для проекта:
+                    </label>
+                    <select id="supercomputer_select"
+                    name="supercomputer_select" required>
                     </select>
                     
                     <label for="code_name">Кодовое название:</label>
-                    <input type="text" id="code_name" name="code_name" required required placeholder="Код проекта">
+                    <input type="text" id="code_name" name="code_name" 
+                    required placeholder="Код проекта">
 
                     <label for="description">Описание проекта:</label>
-                    <input type="text" id="description" name="description" required placeholder="Проект для суперкомпьютера">
+                    <input type="text" id="description" name="description"
+                    required placeholder="Проект для суперкомпьютера">
 
                     <label for="project_developer">Разработчик проекта:</label>
-                    <input type="text" id="project_developer" name="project_developer" required placeholder="Разработчик проекта">
+                    <input type="text" id="project_developer" name="project_developer" 
+                    required placeholder="Разработчик проекта">
 
                     <label for="scope">Область применения:</label>
-                    <input type="text" id="scope" name="scope" required required placeholder="Область применения">
+                    <input type="text" id="scope" name="scope" required
+                     required placeholder="Область применения">
 
                     <label for="date_begin">Дата начала проекта:</label>
                     <input type="date" id="date_begin" name="date_begin" required>
@@ -187,22 +200,30 @@
             <form action="requests/remove_computer.php" method="post">
                 <fieldset>
                     <legend>Удалить суперкомпьютер</legend>
-                    <label for="remove_supercomputer_select">Суперкомпьютер для удаления:</label>
-                    <select id="remove_supercomputer_select" name="remove_supercomputer_select" required>
+                    <label for="remove_supercomputer_select">
+                        Суперкомпьютер для удаления:
+                    </label>
+                    <select id="remove_supercomputer_select" 
+                    name="remove_supercomputer_select" required>
                     </select>
 
-                    <input class="submit" type="submit" value="Удалить компьютер">
+                    <input class="submit" type="submit" 
+                    value="Удалить компьютер">
                 </fieldset>
             </form>
 
             <form action="requests/remove_project.php" method="post">
                 <fieldset>
                     <legend>Удалить проект</legend>
-                    <label for="remove_project_select">Проект для удаления:</label>
-                    <select id="remove_project_select" name="remove_project_select" required>
+                    <label for="remove_project_select">
+                        Проект для удаления:
+                    </label>
+                    <select id="remove_project_select" 
+                    name="remove_project_select" required>
                     </select>
 
-                    <input class="submit" type="submit" value="Удалить проект">
+                    <input class="submit" type="submit" 
+                    value="Удалить проект">
                 </fieldset>
             </form>
 
@@ -210,23 +231,31 @@
                 <fieldset>
                     <legend>Изменить информацию о суперкомпьютере</legend>
 
-                    <label for="modify_supercomputer_select">Суперкомпьютер для модификации:</label>
-                    <select id="modify_supercomputer_select" name="modify_supercomputer_select" required>
+                    <label for="modify_supercomputer_select">
+                        Суперкомпьютер для модификации:
+                    </label>
+                    <select id="modify_supercomputer_select" 
+                    name="modify_supercomputer_select" required>
                     </select>
 
                     <label for="new_name">Новое название:</label>
-                    <input type="text" id="new_name" name="new_name" required placeholder="Суперкомпьютер">
+                    <input type="text" id="new_name" 
+                    name="new_name" required placeholder="Суперкомпьютер">
 
                     <label for="new_location">Новое место установки:</label>
-                    <input type="text" id="new_location" name="new_location" required placeholder="Москва">
+                    <input type="text" id="new_location" 
+                    name="new_location" required placeholder="Москва">
 
-                    <label for="new_performance">Новая производительность (ПФлоп/с):</label>
-                    <input type="number" id="new_performance" name="new_performance" required min="0" max="1000000" value="0">
+                    <label for="new_performance">Новая производительность:</label>
+                    <input type="number" id="new_performance" 
+                    name="new_performance" required min="0" max="1000000" value="0">
 
                     <label for="new_developer">Новый разработчик:</label>
-                    <input type="text" id="new_developer" name="new_developer" required placeholder="Разработчик суперкомпьютера">
+                    <input type="text" id="new_developer" name="new_developer" 
+                    required placeholder="Разработчик суперкомпьютера">
 
-                    <input id="submit" type="submit" value="Обновить суперкомпьютер">
+                    <input class="submit" type="submit" 
+                    value="Обновить суперкомпьютер">
                 </fieldset>
             </form>
 
@@ -234,30 +263,46 @@
                 <fieldset>
                     <legend>Изменить проект</legend>
 
-                    <label for="modify_project_select">Проект для модификации:</label>
-                    <select id="modify_project_select" name="modify_project_select" required>
+                    <label for="modify_project_select">
+                        Проект для модификации:
+                    </label>
+                    <select id="modify_project_select" 
+                    name="modify_project_select" required>
                     </select>
 
-                    <label for="modify_project_supercomputer_select">Суперкомпьютер для проекта:</label>
-                    <select id="modify_project_supercomputer_select" name="modify_project_supercomputer_select" required>
+                    <label for="modify_project_supercomputer_select">
+                        Суперкомпьютер для проекта:
+                    </label>
+                    <select id="modify_project_supercomputer_select" 
+                    name="modify_project_supercomputer_select" required>
                     </select>
                     
                     <label for="code_name">Новое кодовое название:</label>
-                    <input type="text" id="new_code_name" name="new_code_name" required required placeholder="Код проекта">
+                    <input type="text" id="new_code_name" 
+                    name="new_code_name" 
+                    required required placeholder="Код проекта">
 
                     <label for="description">Новое описание проекта:</label>
-                    <input type="text" id="new_description" name="new_description" required placeholder="Проект для суперкомпьютера">
+                    <input type="text" id="new_description" 
+                    name="new_description" 
+                    required placeholder="Проект для суперкомпьютера">
 
                     <label for="project_developer">Новый разработчик проекта:</label>
-                    <input type="text" id="new_project_developer" name="new_project_developer" required placeholder="Разработчик проекта">
+                    <input type="text" id="new_project_developer" 
+                    name="new_project_developer" 
+                    required placeholder="Разработчик проекта">
 
                     <label for="scope">Новая область применения:</label>
-                    <input type="text" id="new_scope" name="new_scope" required required placeholder="Область применения">
+                    <input type="text" id="new_scope" 
+                    name="new_scope" 
+                    required required placeholder="Область применения">
 
                     <label for="date_begin">Новая дата начала проекта:</label>
-                    <input type="date" id="new_date_begin" name="new_date_begin" required>
+                    <input type="date" id="new_date_begin" 
+                    name="new_date_begin" required>
 
-                    <input class="submit" type="submit" value="Обновить проект">
+                    <input class="submit" type="submit" 
+                    value="Обновить проект">
                 </fieldset>
             </form>
         </main>
@@ -265,14 +310,14 @@
 
     <div id="clear"></div>
     <footer>
-        <section id="contact-info">
+        <section class="contact-info">
             <p>Связь с разработчиком:</p>
             <address>
-                <a href="mailto:artemsobakin2001@mail.ru">Электронная почта</a><br>
+                <a href="mailto:test@mail.ru">Электронная почта</a><br>
                 <a href="tel:+79999999999">Телефон</a><br>
             </address>
         </section>
-        <section id="copyright">
+        <section class="copyright">
             <p>© 2025, Параллельные вычисления. Все права защищены.</p>
         </section>
     </footer>

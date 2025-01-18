@@ -1,8 +1,8 @@
 function loadDatabase() {
     fetch('requests/get_supercomputer_projects.php')
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
+        .then(response => response.json()).then(data => {
+            const table = document.getElementById('data-table');
+            const tableBody = table.getElementsByTagName('tbody')[0];
             tableBody.innerHTML = '';
             data.forEach(row => {
                 const newRow = tableBody.insertRow();
@@ -19,8 +19,7 @@ function loadDatabase() {
         });
 }
 
-function createOption(value, content)
-{
+function createOption(value, content) {
     const option = document.createElement('option');
     option.value = value;
     option.textContent = content;
@@ -29,16 +28,14 @@ function createOption(value, content)
 
 function loadSupercomputers() {
     fetch('requests/get_supercomputers.php')
-        .then(response => response.json())
-        .then(data => {
+        .then(response => response.json()).then(data => {
             const select = document.getElementById('supercomputer_select');
             const modify_project = document.getElementById('modify_project_supercomputer_select');
             const remove = document.getElementById('remove_supercomputer_select');
             const modify = document.getElementById('modify_supercomputer_select');
-            select.innerHTML = '';
-            remove.innerHTML = '';
-            modify.innerHTML = '';
-            modify_project.innerHTML = '';
+            
+            select.innerHTML = remove.innerHTML = '';
+            modify.innerHTML = modify_project.innerHTML = '';
             data.forEach(row => {
                 select.appendChild(createOption(row.computer_id, row.name));
                 remove.appendChild(createOption(row.computer_id, row.name));
@@ -54,8 +51,7 @@ function loadProjects() {
         .then(data => {
             const remove = document.getElementById('remove_project_select');
             const modify = document.getElementById('modify_project_select');
-            modify.innerHTML = '';
-            remove.innerHTML = '';
+            modify.innerHTML = remove.innerHTML = '';
             data.forEach(row => {
                 remove.appendChild(createOption(row.project_id, row.code_name));
                 modify.appendChild(createOption(row.project_id, row.code_name));
