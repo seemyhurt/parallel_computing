@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Параллельные вычисления. Суперкомпьютеры</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Таблица отечественных суперкомпьютеров">
+    <meta name="keywords" content="Суперкомпьютер, Параллельные вычисления">
+    <link rel="stylesheet" type="text/css" href="style/page_style.css">
+    <script type="text/javascript" src="scripts/script.js"> </script>
+
+    <script type="text/javascript">
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+
+            updateSeconds(now);
+        }
+
+        var showSeconds = () => {
+            const secondsSpan = document.getElementById('seconds');
+            if (!secondsSpan) {
+                const clockDiv = document.getElementById('clock');
+                clockDiv.innerHTML = 
+                `<span id="hours"></span>:
+                <span id="minutes"></span>:
+                <span id="seconds"></span>`;
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        }
+
+        function updateSeconds(date) {
+            const secondsSpan = document.getElementById('seconds');
+            if (secondsSpan) {
+                const seconds = String(date.getSeconds()).padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds;
+            }
+        }
+
+        setInterval(updateClock, 60000);
+    </script>
+
+    <style>
+        table {
+            width: 100%;
+            overflow-x: auto;
+            border-collapse: collapse;
+            border: 2px solid #929292;
+            display: block;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+        }
+
+        thead th {
+            padding: 10px;
+            text-align: left;
+            border: 2px solid #b4b4b4;
+        }
+
+        tbody td {
+            padding: 10px;
+            border: 2px solid #919191;
+            background-color: #e2e9d2;
+        }
+
+        tfoot td {
+            padding: 10px;
+            background-color: #f2f2f2;
+            font-style: italic;
+            text-align: center;
+        }
+
+        form {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        form input {
+            width: calc(100% - 200px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        footer button {
+            background-color: #FFC107;
+            color: #2E3B4E;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer button:hover {
+            background-color: #977100;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+
+        <header>
+            <img src="assets/logo.png" alt="Логотип">
+            <h1>Параллельные вычисления<br>Суперкомпьютеры</h1>
+        </header>
+
+        <nav>
+            <h2>Меню навигации</h2>
+            <a href="index.html">Главная страница</a>
+            <a href="modern.html">Прикладные аспекты</a>
+            <a href="sources.html">Использованные источники</a>
+            <a href="script.html">Суперкомпьютеры</a>
+            <a href="requests.html">Суперкомпьютерные приложения</a>
+        </nav>
+
+        <main>
+            <h2>Суперкомпьютеры</h2>
+
+            <table id="supercomputersTable">
+                <caption>
+                    Сравнительная таблица суперкомпьютеров
+                </caption>
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Место установки</th>
+                        <th>Узлов</th>
+                        <th>Процессоров</th>
+                        <th>Ускорителей</th>
+                        <th>Rmax (Тфлоп/с)</th>
+                        <th>Rpeak (Тфлоп/с)</th>
+                        <th>Разработчик</th>
+                        <th>Область применения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Червоненкис</td>
+                        <td>Яндекс, Москва</td>
+                        <td>199</td>
+                        <td>398</td>
+                        <td>1592</td>
+                        <td>21530</td>
+                        <td>29415</td>
+                        <td>Яндекс, NVIDIA</td>
+                        <td>IT Services</td>
+                    </tr>
+                    <tr>
+                        <td>Галушкин</td>
+                        <td>Яндекс, Москва</td>
+                        <td>136</td>
+                        <td>272</td>
+                        <td>1088</td>
+                        <td>16020</td>
+                        <td>20636</td>
+                        <td>Яндекс, NVIDIA</td>
+                        <td>IT Services</td>
+                    </tr>
+                    <tr>
+                        <td>Ляпунов</td>
+                        <td>Яндекс, Москва</td>
+                        <td>137</td>
+                        <td>274</td>
+                        <td>1096</td>
+                        <td>12810</td>
+                        <td>20029</td>
+                        <td>Inspur, NVIDIA</td>
+                        <td>IT Services</td>
+                    </tr>
+                    <tr>
+                        <td>Кристофари Нео</td>
+                        <td>СберБанк, Москва</td>
+                        <td>99</td>
+                        <td>198</td>
+                        <td>792</td>
+                        <td>11950</td>
+                        <td>14908</td>
+                        <td>SberCloud, NVIDIA</td>
+                        <td>Облачный провайдер</td>
+                    </tr>
+                    <tr>
+                        <td>Кристофари</td>
+                        <td>СберБанк, Москва</td>
+                        <td>75</td>
+                        <td>150</td>
+                        <td>1200</td>
+                        <td>6669</td>
+                        <td>8789</td>
+                        <td>SberCloud, NVIDIA</td>
+                        <td>Облачный провайдер</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="9">
+                            Данные таблицы акутальны на:
+                            <div id="clock">
+                                <span id="hours"></span>:
+                                <span id="minutes"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <form id="addRowForm" onsubmit="return handleSubmitRow(event)">
+                <fieldset>
+                    <legend>Редактирование содержимого таблицы</legend>
+                    <label for="name">Название:</label>
+                    <input type="text" id="name" 
+                    required placeholder="Суперкомпьютер">
+
+                    <label for="location">Место установки:</label>
+                    <input type="text" id="location" 
+                    required placeholder="Москва">
+
+                    <label for="nodes">Узлов:</label>
+                    <input type="number" id="nodes" 
+                    required min="0" max="10000" value="0">
+
+                    <label for="processors">Процессоров:</label>
+                    <input type="number" id="processors" 
+                    required min="0" max="100000" value="0">
+
+                    <label for="accelerators">Ускорителей:</label>
+                    <input type="number" id="accelerators" 
+                    required min="0" max="100000" value="0">
+
+                    <label for="rmax">Rmax (Тфлоп/с):</label>
+                    <input type="number" id="rmax" 
+                    required min="0" max="1000000" value="0">
+
+                    <label for="rpeak">Rpeak (Тфлоп/с):</label>
+                    <input type="number" id="rpeak" 
+                    required min="0" max="1000000" value="0">
+
+                    <label for="developer">Разработчик:</label>
+                    <input type="text" id="developer" 
+                    required placeholder="Разработчик суперкомпьютера">
+
+                    <label for="application">Область применения:</label>
+                    <input type="text" id="application" 
+                    required placeholder="Область применения суперкомпьютера">
+
+                    <button type="submit">Добавить строку</button>
+                    <button type="button" id="removeRowButton">
+                        Удалить добавленную строку
+                    </button>
+                </fieldset>
+            </form>
+
+            <form id="changeTableForm" onsubmit="return handleChangeTable(event)">
+                <fieldset>
+                    <legend>Редактирование отображение таблицы</legend>
+                    <label for="width">Ширина таблицы:</label>
+                    <input type="number" id="width" value="1200" 
+                    required min="100" max="10000">
+
+                    <label for="height">Высота таблицы:</label>
+                    <input type="number" id="height" value="1000" 
+                    required min="100" max="10000">
+
+                    <label for="captionColor" style="width: 200px;">
+                        Цвет описания таблицы:
+                    </label>
+                    <input style="width: 100px" type="color" id="captionColor" 
+                    required value="#f2f2f2">
+
+                    <label for="headerColor" style="width: 200px;">
+                        Цвет шапки таблицы:
+                    </label>
+                    <input style="width: 100px" type="color" id="headerColor" 
+                    required value="#f2f2f2">
+
+                    <label for="cellColor" style="width: 200px;">
+                        Цвет ячеек таблицы:
+                    </label>
+                    <input style="width: 100px" type="color" id="cellColor" 
+                    required value="#e2e9d2">
+                    
+                    <br>
+                    <button type="submit">Принять параметры</button>
+                    <button type="button" id="showSecondsButton">
+                        Показать полное время акуальности таблицы
+                    </button>
+                </fieldset>
+            </form>
+        </main>
+    </div>
+
+    <div id="clear"></div>
+    <footer>
+        <section class="contact-info">
+            <p>Связь с разработчиком:</p>
+            <address>
+                <a href="mailto:test@mail.ru">Электронная почта</a><br>
+                <a href="tel:+79999999999">Телефон</a><br>
+                <button onclick="alert ('Собакин Артем Вадимович \nГруппа Z1431')">
+                    Разработчик
+                </button>
+            </address>
+        </section>
+        <section class="copyright">
+            <p>© 2025, Параллельные вычисления. Все права защищены.</p>
+        </section>
+    </footer>
+
+
+</body>
+</html>

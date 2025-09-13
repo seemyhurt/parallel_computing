@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Параллельные вычисления. Использованные источники</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Список источников по теме Параллельные вычисления">
+    <meta name="keywords" content="Источники, Параллельные вычисления, Книги">
+    <link rel="stylesheet" type="text/css" href="style/page_style.css">
+
+    <style>
+        li a {
+            text-decoration: none;
+            position: relative;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        li a:visited {
+            color: rgb(128, 1, 128);
+        }
+
+        a[href*="parallel.ru"] {
+            color: rgb(59, 41, 77);
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        li a::before {
+            content: "📚";
+            position: absolute;
+            left: -70px;
+            transform: rotate(90deg);
+            transition: transform 0.5s;
+        }
+
+        li a:hover::before {
+            transform: rotate(0deg);
+        }
+
+        ol {
+            list-style-type: none;
+            counter-reset: list;
+            padding-left: 10;
+        }
+
+        ol li {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        ol li::before {
+            content: counter(list);
+            counter-increment: list;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            color: #999;
+            border: 2px solid #999;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <header>
+            <img src="assets/logo.png" alt="Логотип">
+            <h1>Параллельные вычисления<br>Использованные источники</h1>
+        </header>
+
+        <nav>
+            <h2>Меню навигации</h2>
+            <a href="index.html">Главная страница</a>
+            <a href="modern.html">Прикладные аспекты</a>
+            <a href="sources.html">Использованные источники</a>
+            <a href="script.html">Суперкомпьютеры</a>
+            <a href="requests.html">Суперкомпьютерные приложения</a>
+        </nav>
+
+        <main>
+            <h2>Список источников</h2>
+            <h3>Литература</h3>
+            <ol>
+                <li>
+                    <cite>
+                        В.В. Соснин, П.В. Балакшин 
+                        <q>Введение в параллельные вычисления</q>
+                        – Университет ИТМО, 2015г.
+                    </cite>
+                </li>
+                <li><cite>
+                        Ф.М. Гафаров, А.Ф. Галимянов 
+                        <q>Параллельные вычисления: учебное пособие</q>
+                        – Издательство Казанского университета, 2018г.
+                    </cite>
+                </li>
+                <li>
+                    <cite>
+                        В.Е. Карпов, 
+                        <q>Введение в распараллеливание 
+                            алгоритмов и программ</q>
+                        – Московский физико-технический институт, 2010г.
+                    </cite>
+                </li>
+                <li>
+                    <cite>
+                        Э.В. Дейкстра 
+                        <q>Смиренный программист</q>
+                        - Pearson Education, 2005 г.
+                    </cite>
+                </li>
+                <li>
+                    <cite>
+                        Т. Фарингер 
+                        <q>Лекция о параллельных системах</q>
+                        - Зимний семестр, 2010 г.
+                    </cite>
+                </li>
+                <li>
+                    <cite>
+                        Х.Ф. Джордан, Ф. Алагбанд 
+                        <q>Основы параллельной обработки</q>
+                        - Pearson Education, 2003 г.
+                    </cite>
+                </li>
+            </ol>
+            <h3>Интернет-источники</h3>
+            <ol>
+                <li>
+                    <cite>
+                        <a href="https://parallel.ru/">
+                            Информационно-аналитический 
+                            центр по параллельным вычислениям
+                        </a>
+                    </cite>
+                </li>
+                <li>
+                    <cite>
+                        <a href="https://habr.com/ru/articles/126930/">
+                            Введение в параллельные вычисления
+                        </a>
+                    </cite>
+                </li>
+                <li>
+                    <cite>
+                        <a href="https://www.openmp.org/">
+                            Официальный сайт OpenMP
+                        </a>
+                    </cite>
+                </li>
+            </ol>
+        </main>
+    </div>
+
+    <div id="clear"></div>
+    <footer>
+        <section class="contact-info">
+            <p>Связь с разработчиком:</p>
+            <address>
+                <a href="mailto:test@mail.ru">Электронная почта</a><br>
+                <a href="tel:+79999999999">Телефон</a>
+            </address>
+        </section>
+        <section class="copyright">
+            <p>© 2025, Параллельные вычисления. Все права защищены.</p>
+        </section>
+    </footer>
+    
+</body>
+</html>
